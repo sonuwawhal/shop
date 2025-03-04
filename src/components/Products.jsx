@@ -1,12 +1,16 @@
 import React from 'react'
 
-const Products = ({title,img,price}) => {
+const Products = ({title,price,image}) => {
   return (
-    <div key={id}>
-        <img src={img}/>
-      <h2>{title}</h2>
-      <h3>{price}</h3>
-    </div>
+    <div className='flex'>
+        <div className='one'>
+           <img src={image} className='img'/>
+             <p>{title}</p>
+            <h3>{price}</h3>
+            
+      </div>
+      </div>
+    
   )
 }
 

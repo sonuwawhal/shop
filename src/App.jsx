@@ -10,28 +10,39 @@ function App() {
   useEffect(()=>{
     console.log("Products")
    
-  const Product1=()=>{
+  
     fetch('https://fakestoreapi.com/products')
     .then(res=>(res.json()))
-       .then(data=>setProduct(data))
+       .then(data=>{
+        console.log(data);
+        setProduct(data)})
       
   }
   
  
-})
+)
 
   return (
 
-  
-    <>
-      <div>
-        <h1>Shop Now</h1>
+  <>
+    <h1>Shop</h1>
+      <div className='new'>
+        
       {
          product.map((item)=>
-           (
-            <Products title={item.title} img={item.img} price={item.price}/>
-        ))
-      }  
+         {
+          return(
+          
+          
+            <Products title={item.title} image={item.image} price={item.price} />
+            
+          )
+         }
+      
+          )
+         
+        }
+        
    
          
         
@@ -39,7 +50,7 @@ function App() {
       
 
         </div>
-    </>
+        </>
   )
 }
 
